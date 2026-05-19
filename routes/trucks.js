@@ -37,7 +37,7 @@ router.post('/', upload.single('image'), (req, res) => {
       return res.status(500).json({ message: 'Gagal menyimpan data truck', error: err });
     }
 
-    const imageUrl = image ? `http://localhost:5000/uploads/${image}` : null;
+    const imageUrl = image ? `/api/uploads/${image}` : null;
 
     res.status(201).json({
       message: 'Truck berhasil ditambahkan',
@@ -59,7 +59,7 @@ router.get('/', (req, res) => {
     const trucks = results.map(truck => {
       let imageUrl = null;
       if (truck.image_path) {
-        imageUrl = `http://localhost:5000/uploads/${truck.image_path.replace(/^uploads[\\/]+/, '')}`;
+        imageUrl = `/api/uploads/${truck.image_path.replace(/^uploads[\\/]+/, '')}`;
       }
       return { ...truck, image_url: imageUrl };
     });

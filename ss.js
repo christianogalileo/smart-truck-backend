@@ -100,7 +100,7 @@ app.get('/api/trucks', (req, res) => {
 
     const data = results.map(truck => ({
       ...truck,
-      image_url: truck.image_path ? `http://localhost:${PORT}/uploads/${truck.image_path}` : null
+      image_url: truck.image_path ? `/uploads/${truck.image_path}` : null
     }));
 
     res.json(data);

@@ -48,7 +48,7 @@ router.get('/', (req, res) => {
 
     const data = results.map(item => ({
       ...item,
-      image_url: item.image_path ? `http://localhost:5000/uploads/${item.image_path}` : null,
+      image_url: item.image_path ? `/api/uploads/${item.image_path}` : null,
     }));
 
     res.json(data);

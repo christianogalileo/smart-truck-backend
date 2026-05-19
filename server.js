@@ -147,7 +147,7 @@ app.post('/api/login', async (req, res) => {
         plateNumber: truck.plateNumber,   // ✅ Tambahin ini
         status: truck.current_status || 'Unknown',
         date: truck.date,
-        image_url: truck.image_path ? `http://localhost:${PORT}/uploads/${truck.image_path}` : null
+        image_url: truck.image_path ? `/uploads/${truck.image_path}` : null
       }));
 
 
@@ -273,7 +273,7 @@ app.get('/api/export/truck/:truckId', exportExcelHandler);
         plateNumber: truck.plateNumber,   // ✅ tambahin
         status: truck.status,
         date: truck.date,
-        image_url: truck.image_path ? `http://localhost:${PORT}/uploads/${truck.image_path}` : null
+        image_url: truck.image_path ? `/uploads/${truck.image_path}` : null
       });
     });
   });
@@ -454,7 +454,7 @@ app.get('/api/export/truck/:truckId', exportExcelHandler);
                 plateNumber: truck.plateNumber, // ✅ plat nomor
                 status: truck.status,
                 date: truck.date,
-                image_url: truck.image_path ? `http://localhost:${PORT}/uploads/${truck.image_path}` : null
+                image_url: truck.image_path ? `/uploads/${truck.image_path}` : null
               }
             });
           }
@@ -608,7 +608,7 @@ app.get('/api/trucks/:truckId/details', (req, res) => {
         plateNumber: truck.plateNumber,   // ✅ tambahin
         status: truck.status,
         date: truck.date,
-        image_url: truck.image_path ? `http://localhost:${PORT}/uploads/${truck.image_path}` : null
+        image_url: truck.image_path ? `/uploads/${truck.image_path}` : null
       });
     });
   });
@@ -858,7 +858,7 @@ app.get("/api/trucks/search/:plateNumber", (req, res) => {
       status: truck.status || "Unknown",
       date: truck.date,
       image_url: truck.image_path
-        ? `http://localhost:${PORT}/uploads/${truck.image_path}`
+        ? `/uploads/${truck.image_path}`
         : null,
     }));
 
