@@ -4,8 +4,8 @@ const mysql = require('mysql2');
 // Buat koneksi database
 const connection = mysql.createConnection({
   host: 'localhost',
-  user: 'root',
-  password: '', // isi jika pakai password
+  user: 'smartuser',
+  password: 'smartpass123', // isi jika pakai password
   database: 'smart_truck_db'
 });
 
