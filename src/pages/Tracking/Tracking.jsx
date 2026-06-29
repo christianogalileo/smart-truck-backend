@@ -7,7 +7,7 @@ const Tracking = () => {
   const [selectedDate, setSelectedDate] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const apiUrl = 'http://localhost:5000';
+  const apiUrl = '${process.env.REACT_APP_API_URL}';
 
   const mapStatusToValue = (status) => {
     switch (status) {

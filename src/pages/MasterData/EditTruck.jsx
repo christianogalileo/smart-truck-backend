@@ -20,7 +20,7 @@ const EditTruck = () => {
   useEffect(() => {
     const fetchTruckData = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/trucks/${truckId}`);
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/api/trucks/${truckId}`);
         const data = await res.json();
         if (res.ok) {
           setForm({
@@ -69,7 +69,7 @@ const EditTruck = () => {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/trucks/${truckId}`, {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/trucks/${truckId}`, {
         method: 'PUT',
         body: formData,
       });
@@ -207,7 +207,7 @@ const EditTruck = () => {
                 className="mt-1 p-2 border border-gray-300 rounded w-full"
               />
               {form.existingImage && !form.image && (
-                <img src={`http://localhost:5000/uploads/${form.existingImage}`} alt="Truck Preview" className="mt-2 h-32 object-cover rounded" />
+                <img src={`${process.env.REACT_APP_API_URL}/uploads/${form.existingImage}`} alt="Truck Preview" className="mt-2 h-32 object-cover rounded" />
               )}
             </div>
 

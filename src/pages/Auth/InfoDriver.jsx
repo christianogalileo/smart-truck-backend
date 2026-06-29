@@ -11,7 +11,7 @@ const InfoDriver = ({ role }) => {
   const [error, setError] = useState("");
 
   const fetchTrucks = () => {
-    fetch("http://localhost:5000/api/trucks")
+    fetch("${process.env.REACT_APP_API_URL}/api/trucks")
       .then((res) => res.json())
       .then((data) => {
         setTrucks(data);
@@ -26,7 +26,7 @@ const InfoDriver = ({ role }) => {
     const encodedPlate = encodeURIComponent(plateNumber);
 
     fetch(
-      `http://localhost:5000/api/trucks/search/${encodedPlate}`
+      `${process.env.REACT_APP_API_URL}/api/trucks/search/${encodedPlate}`
     )
       .then((res) => {
         if (res.status === 404) {

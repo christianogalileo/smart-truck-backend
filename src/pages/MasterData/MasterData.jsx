@@ -20,7 +20,7 @@ const MasterData = ({ role }) => { // ← sekarang menerima role langsung
   const [isRFIDScanned, setIsRFIDScanned] = useState(false);
   const [rfidValue, setRfidValue] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
-  const apiUrl = 'http://localhost:5000';
+  const apiUrl = '${process.env.REACT_APP_API_URL}';
 
   // RFID polling
   useEffect(() => {

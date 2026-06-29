@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Checkpoint = ({ role }) => {
   const userRole = role || "User";
-  const apiUrl = "http://localhost:5000";
+  const apiUrl = "${process.env.REACT_APP_API_URL}";
 
   const [checkpoints, setCheckpoints] = useState([]);
   const [loading, setLoading] = useState(false);

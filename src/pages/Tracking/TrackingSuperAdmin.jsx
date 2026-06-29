@@ -7,7 +7,7 @@ const TrackingSuperAdmin = () => {
   const [selectedDate, setSelectedDate] = useState('');
 
   useEffect(() => {
-    const url = `http://localhost:5000/api/trucks?status=${activeTab}${selectedDate ? `&date=${selectedDate}` : ''}`;
+    const url = `${process.env.REACT_APP_API_URL}/api/trucks?status=${activeTab}${selectedDate ? `&date=${selectedDate}` : ''}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setTrucks(data))
