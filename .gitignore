@@ -1,5 +1,3 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
@@ -21,3 +19,16 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# =========================
+# PROJECT SPECIFIC (WAJIB)
+# =========================
+
+# backend (JANGAN KE DEPLOY FRONTEND)
+smart-truck-backend/
+
+# nested / duplicate frontend (INI BIANG MASALAH KAMU)
+smartcard-truck/
+
+# git internal accidental repo
+**/.git
