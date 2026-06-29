@@ -7,7 +7,8 @@ const TimbangMuat = () => {
   const [list, setList] = useState([]);
 
   const [mode, setMode] = useState("BRUTO");
-
+  
+  // eslint-disable-next-line no-unused-vars
   const [activeId, setActiveId] = useState(null);
 
   const [form, setForm] = useState({
@@ -166,6 +167,7 @@ const TimbangMuat = () => {
   };
 
   // ================= FETCH DATA =================
+  // eslint-disable-next-line no-unused-vars
   const fetchData = async (truckId) => {
     try {
       const res = await axios.get(
